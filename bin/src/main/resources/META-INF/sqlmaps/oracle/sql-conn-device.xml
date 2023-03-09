@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="com.lgu.ccss.carpush.mapper.CarPushMapperOracle">	
+	
+	<update id="carPushUpdateStatus" parameterType="com.lgu.ccss.carpush.model.ConnDeviceVO">
+		UPDATE
+			TB_CONN_DEVICE
+		SET
+			DEVICE_PUSH_CON_STATUS = #{devicePushConnStatus},
+			DEVICE_PUSH_CONN_DT = SYSDATE,
+			UPD_ID = #{updId},
+			UPD_DT = SYSDATE
+		WHERE
+			DEVICE_CTN = #{deviceCtn}
+	</update>
+	
+</mapper>
